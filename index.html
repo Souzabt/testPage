@@ -22,14 +22,15 @@
       justify-content: center;
       background: radial-gradient(circle at 20% 20%, #1e3a8a, #020617);
       color: #fff;
-      overflow: hidden;
+      overflow-x: hidden;
+      padding: 20px;
     }
 
     /* BACKGROUND */
     .bg-blur {
       position: absolute;
-      width: 500px;
-      height: 500px;
+      width: 40vw;
+      height: 40vw;
       background: #3b82f6;
       filter: blur(140px);
       opacity: 0.4;
@@ -54,32 +55,24 @@
       position: relative;
       z-index: 2;
       max-width: 720px;
-      width: 95%;
-      padding: 95px 50px 60px; /* espaço maior no topo */
+      width: 100%;
+      padding: 120px 40px 50px;
       border-radius: 24px;
       backdrop-filter: blur(25px);
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
       box-shadow: 0 30px 80px rgba(0,0,0,0.5);
       text-align: center;
-      transition: transform 0.4s ease;
     }
 
-    .container:hover {
-      transform: scale(1.02);
-    }
-
-    /* LOGO GRANDE DENTRO DO CARD */
+    /* LOGO RESPONSIVO */
     .logo-top {
       position: absolute;
-      top: 25px;
-      left: -70px;
+      top: 20px;
+      left: 20px;
 
-      width: 400px;
-      max-width: 80%; /* impede quebrar layout */
-
+      width: clamp(180px, 35vw, 400px); /* 🔥 chave do sucesso */
       height: auto;
-      object-fit: contain;
 
       opacity: 0.95;
       filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
@@ -87,7 +80,7 @@
 
     /* EMOJI */
     .emoji {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin-bottom: 15px;
       animation: bounce 2s infinite;
     }
@@ -98,36 +91,35 @@
     }
 
     h1 {
-      font-size: 3.2rem;
+      font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 700;
       margin-bottom: 12px;
     }
 
     .subtitle {
-      font-size: 1.15rem;
+      font-size: clamp(1rem, 2vw, 1.15rem);
       opacity: 0.85;
       margin-bottom: 18px;
     }
 
     .skills {
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 1.8vw, 1rem);
       opacity: 0.75;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
       line-height: 1.6;
     }
 
     .line {
       width: 80px;
       height: 3px;
-      margin: 25px auto;
+      margin: 20px auto;
       background: linear-gradient(90deg, transparent, #60a5fa, transparent);
       border-radius: 50px;
     }
 
-    /* BOTÃO */
     .button {
       display: inline-block;
-      padding: 14px 34px;
+      padding: 12px 28px;
       border-radius: 999px;
       background: linear-gradient(135deg, #3b82f6, #60a5fa);
       color: #fff;
@@ -143,26 +135,20 @@
     }
 
     .footer {
-      margin-top: 30px;
-      font-size: 0.85rem;
+      margin-top: 25px;
+      font-size: 0.8rem;
       opacity: 0.6;
     }
 
+    /* MOBILE AJUSTE FINO */
     @media (max-width: 600px) {
       .container {
-        padding: 180px 25px 40px;
+        padding: 140px 20px 40px;
       }
 
       .logo-top {
-        width: 250px;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      .skills {
-        font-size: 0.9rem;
+        left: 15px;
+        top: 15px;
       }
     }
   </style>
@@ -175,7 +161,6 @@
 
   <div class="container">
 
-    <!-- LOGO GRANDE -->
     <img src="assets/logo.png" alt="Data World Logo" class="logo-top">
 
     <div class="emoji">🚧</div>
