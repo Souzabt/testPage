@@ -6,6 +6,7 @@
   <title>Data World | Em Breve</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <style>
     * {
@@ -53,9 +54,9 @@
     .container {
       position: relative;
       z-index: 2;
-      max-width: 720px;
+      max-width: 720px; /* AQUI aumentamos */
       width: 95%;
-      padding: 60px 50px;
+      padding: 60px 50px; /* MAIS ESPAÇO */
       border-radius: 24px;
       backdrop-filter: blur(25px);
       background: rgba(255,255,255,0.06);
@@ -69,17 +70,15 @@
       transform: scale(1.02);
     }
 
-    /* LOGO */
-    .logo {
-      width: 220px;
-      margin-bottom: 25px;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
-      animation: floatLogo 4s ease-in-out infinite;
+    .emoji {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      animation: bounce 2s infinite;
     }
 
-    @keyframes floatLogo {
+    @keyframes bounce {
       0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+      50% { transform: translateY(-10px); }
     }
 
     h1 {
@@ -139,10 +138,6 @@
         padding: 35px 25px;
       }
 
-      .logo {
-        width: 180px;
-      }
-
       h1 {
         font-size: 2.2rem;
       }
@@ -160,9 +155,7 @@
   <div class="bg-blur"></div>
 
   <div class="container">
-
-    <!-- LOGO -->
-    <img src="assets/logo.jpeg" alt="Data World Logo" class="logo">
+    <div class="emoji">🚧</div>
 
     <h1>Em construção</h1>
 
@@ -176,6 +169,7 @@
       Data & Automation Analyst • Power BI • SQL • Python • APIs • n8n • Dashboards • IA aplicada
     </p>
 
+    <!-- LINK DO LINKEDIN -->
     <a class="button" 
        href="https://www.linkedin.com/in/SEU-LINK-AQUI" 
        target="_blank">
@@ -185,7 +179,6 @@
     <div class="footer">
       © 2026 João Victor • Data World
     </div>
-
   </div>
 
 </body>
