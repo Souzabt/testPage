@@ -55,7 +55,7 @@
       z-index: 2;
       max-width: 720px;
       width: 95%;
-      padding: 60px 50px;
+      padding: 80px 50px 60px; /* MAIS ESPAÇO EM CIMA */
       border-radius: 24px;
       backdrop-filter: blur(25px);
       background: rgba(255,255,255,0.06);
@@ -69,13 +69,17 @@
       transform: scale(1.02);
     }
 
-    /* LOGO TOPO */
+    /* LOGO (AGORA CORRETO) */
     .logo-top {
       position: absolute;
       top: 20px;
-      left: 5px;
-      width: 500px;
-      opacity: 0.9;
+      left: 30px;
+
+      width: 180px;
+      max-width: 40%;
+      height: auto;
+
+      opacity: 0.95;
       filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
     }
 
@@ -145,11 +149,11 @@
 
     @media (max-width: 600px) {
       .container {
-        padding: 35px 25px;
+        padding: 90px 25px 40px;
       }
 
       .logo-top {
-        width: 90px;
+        width: 120px;
       }
 
       h1 {
