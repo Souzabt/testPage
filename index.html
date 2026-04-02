@@ -24,172 +24,234 @@
       color: #fff;
       overflow-x: hidden;
       padding: 20px;
+      position: relative;
     }
 
-    /* BACKGROUND */
     .bg-blur {
       position: absolute;
-      width: 40vw;
-      height: 40vw;
+      width: min(42vw, 520px);
+      height: min(42vw, 520px);
       background: #3b82f6;
       filter: blur(140px);
       opacity: 0.4;
       border-radius: 50%;
       animation: float 10s ease-in-out infinite;
+      pointer-events: none;
     }
 
     .bg-blur:nth-child(2) {
       background: #60a5fa;
-      top: 60%;
-      left: 60%;
+      top: 58%;
+      left: 62%;
       animation-delay: 3s;
     }
 
     @keyframes float {
-      0%, 100% { transform: translate(0,0); }
+      0%, 100% { transform: translate(0, 0); }
       50% { transform: translate(60px, -60px); }
     }
 
-    /* CARD */
     .container {
       position: relative;
       z-index: 2;
-      max-width: 720px;
-      width: 100%;
-      padding: 120px 40px 50px;
-      border-radius: 24px;
+      width: min(100%, 900px);
+      min-height: 620px;
+      padding: 120px 48px 56px;
+      border-radius: 28px;
       backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
       box-shadow: 0 30px 80px rgba(0,0,0,0.5);
       text-align: center;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      overflow: hidden;
     }
 
-    /* LOGO COLADO NO CANTO */
+    .container:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 38px 95px rgba(0,0,0,0.55);
+      border-color: rgba(255,255,255,0.18);
+    }
+
     .logo {
       position: absolute;
-      top: 0;
-      left: 0;
-
-      width: clamp(200px, 30vw, 400px);
-
-      transform: translate(-10%, -20%); /* 🔥 ajuste fino visual */
-
+      top: 18px;
+      left: 18px;
+      width: clamp(220px, 30vw, 400px);
       height: auto;
+      display: block;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.28));
+      user-select: none;
       pointer-events: none;
-      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
     }
 
-    /* EMOJI */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
     .emoji {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
+      font-size: 2.7rem;
+      margin-bottom: 18px;
       animation: bounce 2s infinite;
     }
 
     @keyframes bounce {
-      0%,100% { transform: translateY(0); }
+      0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
 
     h1 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: 1.05;
       font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .subtitle {
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      opacity: 0.85;
-      margin-bottom: 18px;
-    }
-
-    .skills {
-      font-size: clamp(0.9rem, 1.8vw, 1rem);
-      opacity: 0.75;
-      margin-bottom: 30px;
-      line-height: 1.6;
+      margin-bottom: 16px;
+      letter-spacing: -0.04em;
     }
 
     .line {
-      width: 80px;
-      height: 3px;
-      margin: 20px auto;
+      width: 92px;
+      height: 4px;
+      margin: 0 auto 28px;
+      border-radius: 999px;
       background: linear-gradient(90deg, transparent, #60a5fa, transparent);
-      border-radius: 50px;
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.2rem);
+      opacity: 0.92;
+      margin-bottom: 24px;
+    }
+
+    .skills {
+      font-size: clamp(1rem, 1.6vw, 1.05rem);
+      opacity: 0.78;
+      line-height: 1.7;
+      margin-bottom: 38px;
     }
 
     .button {
       display: inline-block;
-      padding: 12px 28px;
+      padding: 16px 34px;
       border-radius: 999px;
-      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      background: linear-gradient(135deg, #4f79ff, #6aa5ff);
       color: #fff;
+      font-size: 1rem;
       font-weight: 600;
       text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(59,130,246,0.5);
+      box-shadow: 0 10px 30px rgba(59,130,246,0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
     }
 
     .button:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 20px 45px rgba(59,130,246,0.7);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 18px 42px rgba(59,130,246,0.6);
+      filter: brightness(1.05);
     }
 
     .footer {
-      margin-top: 25px;
-      font-size: 0.8rem;
-      opacity: 0.6;
+      margin-top: 30px;
+      font-size: 0.85rem;
+      opacity: 0.62;
     }
 
-    /* MOBILE */
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
       .container {
-        padding: 140px 20px 40px;
+        min-height: auto;
+        padding: 128px 28px 44px;
       }
 
       .logo {
-        width: 220px;
-        transform: translate(-5%, -15%);
+        width: clamp(210px, 42vw, 320px);
+        top: 16px;
+        left: 16px;
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 7vw, 4rem);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 14px;
+      }
+
+      .container {
+        padding: 108px 20px 34px;
+        border-radius: 22px;
+      }
+
+      .container:hover {
+        transform: none;
+      }
+
+      .logo {
+        width: clamp(180px, 52vw, 250px);
+        top: 12px;
+        left: 12px;
+      }
+
+      .emoji {
+        font-size: 2.3rem;
+        margin-bottom: 14px;
+      }
+
+      .line {
+        width: 76px;
+        margin-bottom: 22px;
+      }
+
+      .skills {
+        margin-bottom: 30px;
+      }
+
+      .button {
+        padding: 14px 28px;
+      }
+
+      .footer {
+        margin-top: 24px;
+        font-size: 0.8rem;
       }
     }
   </style>
 </head>
-
 <body>
 
   <div class="bg-blur"></div>
   <div class="bg-blur"></div>
 
   <div class="container">
+    <img src="assets/logo.png" alt="Data World Logo" class="logo">
 
-    <!-- LOGO COLADO -->
-    <img src="assets/logo.png" class="logo" alt="Data World Logo">
+    <div class="content">
+      <div class="emoji">🚧</div>
 
-    <div class="emoji">🚧</div>
+      <h1>Em construção</h1>
 
-    <h1>Em construção</h1>
+      <div class="line"></div>
 
-    <div class="line"></div>
+      <p class="subtitle">
+        Estou preparando algo grande por aqui.
+      </p>
 
-    <p class="subtitle">
-      Estou preparando algo grande por aqui.
-    </p>
+      <p class="skills">
+        Data & Automation Analyst • Power BI • SQL • Python • APIs • n8n • Dashboards • IA aplicada
+      </p>
 
-    <p class="skills">
-      Data & Automation Analyst • Power BI • SQL • Python • APIs • n8n • Dashboards • IA aplicada
-    </p>
+      <a class="button"
+         href="https://www.linkedin.com/in/SEU-LINK-AQUI"
+         target="_blank"
+         rel="noopener noreferrer">
+        Fale comigo
+      </a>
 
-    <a class="button" 
-       href="https://www.linkedin.com/in/SEU-LINK-AQUI" 
-       target="_blank">
-      Fale comigo
-    </a>
-
-    <div class="footer">
-      © 2026 João Victor • Data World
+      <div class="footer">
+        © 2026 João Victor • Data World
+      </div>
     </div>
-
   </div>
 
 </body>
