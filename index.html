@@ -23,6 +23,18 @@
       background: radial-gradient(circle at 20% 20%, #1e3a8a, #020617);
       color: #fff;
       overflow: hidden;
+      position: relative;
+    }
+
+    /* LOGO LATERAL (AGORA GRANDE E CORRETO) */
+    .logo-side {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 500px;
+      opacity: 0.95;
+      pointer-events: none; /* não atrapalha clique */
     }
 
     /* BACKGROUND */
@@ -55,7 +67,7 @@
       z-index: 2;
       max-width: 720px;
       width: 95%;
-      padding: 80px 50px 60px; /* MAIS ESPAÇO EM CIMA */
+      padding: 60px 50px;
       border-radius: 24px;
       backdrop-filter: blur(25px);
       background: rgba(255,255,255,0.06);
@@ -67,20 +79,6 @@
 
     .container:hover {
       transform: scale(1.02);
-    }
-
-    /* LOGO (AGORA CORRETO) */
-    .logo-top {
-      position: absolute;
-      top: 20px;
-      left: 30px;
-
-      width: 180px;
-      max-width: 40%;
-      height: auto;
-
-      opacity: 0.95;
-      filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
     }
 
     /* EMOJI */
@@ -99,7 +97,6 @@
       font-size: 3.2rem;
       font-weight: 700;
       margin-bottom: 12px;
-      letter-spacing: -1px;
     }
 
     .subtitle {
@@ -123,7 +120,6 @@
       border-radius: 50px;
     }
 
-    /* BOTÃO */
     .button {
       display: inline-block;
       padding: 14px 34px;
@@ -147,21 +143,10 @@
       opacity: 0.6;
     }
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 90px 25px 40px;
-      }
-
-      .logo-top {
-        width: 120px;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      .skills {
-        font-size: 0.9rem;
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      .logo-side {
+        display: none; /* esconde no mobile */
       }
     }
   </style>
@@ -169,15 +154,14 @@
 
 <body>
 
+  <!-- LOGO LATERAL -->
+  <img src="assets/logo.png" class="logo-side" alt="Data World Logo">
+
   <div class="bg-blur"></div>
   <div class="bg-blur"></div>
 
   <div class="container">
 
-    <!-- LOGO -->
-    <img src="assets/logo.png" alt="Data World Logo" class="logo-top">
-
-    <!-- EMOJI -->
     <div class="emoji">🚧</div>
 
     <h1>Em construção</h1>
