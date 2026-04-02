@@ -25,7 +25,7 @@
       overflow: hidden;
     }
 
-    /* Background */
+    /* BACKGROUND */
     .bg-blur {
       position: absolute;
       width: 500px;
@@ -67,6 +67,16 @@
 
     .container:hover {
       transform: scale(1.02);
+    }
+
+    /* LOGO TOPO */
+    .logo-top {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      width: 120px;
+      opacity: 0.9;
+      filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
     }
 
     /* EMOJI */
@@ -127,22 +137,8 @@
       box-shadow: 0 20px 45px rgba(59,130,246,0.7);
     }
 
-    /* LOGO DISCRETO */
-    .logo-small {
-      width: 140px;
-      margin-top: 25px;
-      opacity: 0.85;
-      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
-      transition: 0.3s;
-    }
-
-    .logo-small:hover {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-
     .footer {
-      margin-top: 25px;
+      margin-top: 30px;
       font-size: 0.85rem;
       opacity: 0.6;
     }
@@ -152,16 +148,16 @@
         padding: 35px 25px;
       }
 
+      .logo-top {
+        width: 90px;
+      }
+
       h1 {
         font-size: 2.2rem;
       }
 
       .skills {
         font-size: 0.9rem;
-      }
-
-      .logo-small {
-        width: 110px;
       }
     }
   </style>
@@ -173,6 +169,9 @@
   <div class="bg-blur"></div>
 
   <div class="container">
+
+    <!-- LOGO -->
+    <img src="assets/logo.png" alt="Data World Logo" class="logo-top">
 
     <!-- EMOJI -->
     <div class="emoji">🚧</div>
@@ -194,9 +193,6 @@
        target="_blank">
       Fale comigo
     </a>
-
-    <!-- LOGO DISCRETO -->
-    <img src="assets/logo.png" alt="Data World Logo" class="logo-small">
 
     <div class="footer">
       © 2026 João Victor • Data World
