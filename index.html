@@ -23,18 +23,6 @@
       background: radial-gradient(circle at 20% 20%, #1e3a8a, #020617);
       color: #fff;
       overflow: hidden;
-      position: relative;
-    }
-
-    /* LOGO LATERAL (AGORA GRANDE E CORRETO) */
-    .logo-side {
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 500px;
-      opacity: 0.95;
-      pointer-events: none; /* não atrapalha clique */
     }
 
     /* BACKGROUND */
@@ -67,7 +55,7 @@
       z-index: 2;
       max-width: 720px;
       width: 95%;
-      padding: 60px 50px;
+      padding: 160px 50px 60px; /* espaço maior no topo */
       border-radius: 24px;
       backdrop-filter: blur(25px);
       background: rgba(255,255,255,0.06);
@@ -79,6 +67,22 @@
 
     .container:hover {
       transform: scale(1.02);
+    }
+
+    /* LOGO GRANDE DENTRO DO CARD */
+    .logo-top {
+      position: absolute;
+      top: 25px;
+      left: 30px;
+
+      width: 400px;
+      max-width: 80%; /* impede quebrar layout */
+
+      height: auto;
+      object-fit: contain;
+
+      opacity: 0.95;
+      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
     }
 
     /* EMOJI */
@@ -120,6 +124,7 @@
       border-radius: 50px;
     }
 
+    /* BOTÃO */
     .button {
       display: inline-block;
       padding: 14px 34px;
@@ -143,10 +148,21 @@
       opacity: 0.6;
     }
 
-    /* RESPONSIVO */
-    @media (max-width: 900px) {
-      .logo-side {
-        display: none; /* esconde no mobile */
+    @media (max-width: 600px) {
+      .container {
+        padding: 180px 25px 40px;
+      }
+
+      .logo-top {
+        width: 250px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .skills {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -154,13 +170,13 @@
 
 <body>
 
-  <!-- LOGO LATERAL -->
-  <img src="assets/logo.png" class="logo-side" alt="Data World Logo">
-
   <div class="bg-blur"></div>
   <div class="bg-blur"></div>
 
   <div class="container">
+
+    <!-- LOGO GRANDE -->
+    <img src="assets/logo.png" alt="Data World Logo" class="logo-top">
 
     <div class="emoji">🚧</div>
 
