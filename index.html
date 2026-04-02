@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <!-- Configurações básicas -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título da página -->
   <title>Data World | Em Breve</title>
 
+  <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* =========================
+       RESET GLOBAL
+    ========================= */
     * {
       margin: 0;
       padding: 0;
@@ -15,6 +22,9 @@
       font-family: 'Inter', sans-serif;
     }
 
+    /* =========================
+       BODY / FUNDO PRINCIPAL
+    ========================= */
     body {
       min-height: 100vh;
       display: flex;
@@ -27,6 +37,9 @@
       position: relative;
     }
 
+    /* =========================
+       BOLHAS DE LUZ DO FUNDO
+    ========================= */
     .bg-blur {
       position: absolute;
       width: min(42vw, 520px);
@@ -51,6 +64,9 @@
       50% { transform: translate(60px, -60px); }
     }
 
+    /* =========================
+       CARD PRINCIPAL
+    ========================= */
     .container {
       position: relative;
       z-index: 2;
@@ -74,10 +90,13 @@
       border-color: rgba(255,255,255,0.18);
     }
 
+    /* =========================
+       LOGO NO TOPO ESQUERDO
+    ========================= */
     .logo {
       position: absolute;
-      top: 18px;
-      left: 18px;
+      top: 12px;
+      left: 8px;
       width: clamp(220px, 30vw, 400px);
       height: auto;
       display: block;
@@ -86,11 +105,17 @@
       pointer-events: none;
     }
 
+    /* =========================
+       ÁREA CENTRAL DE CONTEÚDO
+    ========================= */
     .content {
       max-width: 760px;
       margin: 0 auto;
     }
 
+    /* =========================
+       EMOJI ANIMADO
+    ========================= */
     .emoji {
       font-size: 2.7rem;
       margin-bottom: 18px;
@@ -102,6 +127,9 @@
       50% { transform: translateY(-10px); }
     }
 
+    /* =========================
+       TÍTULO PRINCIPAL
+    ========================= */
     h1 {
       font-size: clamp(2.5rem, 5vw, 5rem);
       line-height: 1.05;
@@ -110,6 +138,9 @@
       letter-spacing: -0.04em;
     }
 
+    /* =========================
+       LINHA DE DESTAQUE
+    ========================= */
     .line {
       width: 92px;
       height: 4px;
@@ -118,12 +149,18 @@
       background: linear-gradient(90deg, transparent, #60a5fa, transparent);
     }
 
+    /* =========================
+       SUBTÍTULO
+    ========================= */
     .subtitle {
       font-size: clamp(1.1rem, 2vw, 1.2rem);
       opacity: 0.92;
       margin-bottom: 24px;
     }
 
+    /* =========================
+       TEXTO DE HABILIDADES
+    ========================= */
     .skills {
       font-size: clamp(1rem, 1.6vw, 1.05rem);
       opacity: 0.78;
@@ -131,6 +168,9 @@
       margin-bottom: 38px;
     }
 
+    /* =========================
+       BOTÃO
+    ========================= */
     .button {
       display: inline-block;
       padding: 16px 34px;
@@ -150,12 +190,18 @@
       filter: brightness(1.05);
     }
 
+    /* =========================
+       RODAPÉ
+    ========================= */
     .footer {
       margin-top: 30px;
       font-size: 0.85rem;
       opacity: 0.62;
     }
 
+    /* =========================
+       TABLET / TELAS MÉDIAS
+    ========================= */
     @media (max-width: 900px) {
       .container {
         min-height: auto;
@@ -164,8 +210,8 @@
 
       .logo {
         width: clamp(210px, 42vw, 320px);
-        top: 16px;
-        left: 16px;
+        top: 12px;
+        left: 6px;
       }
 
       h1 {
@@ -173,6 +219,9 @@
       }
     }
 
+    /* =========================
+       MOBILE
+    ========================= */
     @media (max-width: 600px) {
       body {
         padding: 14px;
@@ -189,8 +238,8 @@
 
       .logo {
         width: clamp(180px, 52vw, 250px);
-        top: 12px;
-        left: 12px;
+        top: 10px;
+        left: 6px;
       }
 
       .emoji {
@@ -220,37 +269,53 @@
 </head>
 <body>
 
+  <!-- Luzes do fundo -->
   <div class="bg-blur"></div>
   <div class="bg-blur"></div>
 
+  <!-- Card principal -->
   <div class="container">
+
+    <!-- Logo -->
     <img src="assets/logo.png" alt="Data World Logo" class="logo">
 
+    <!-- Conteúdo central -->
     <div class="content">
+
+      <!-- Emoji -->
       <div class="emoji">🚧</div>
 
+      <!-- Título -->
       <h1>Em construção</h1>
 
+      <!-- Linha -->
       <div class="line"></div>
 
+      <!-- Subtítulo -->
       <p class="subtitle">
         Estou preparando algo grande por aqui.
       </p>
 
+      <!-- Skills -->
       <p class="skills">
         Data & Automation Analyst • Power BI • SQL • Python • APIs • n8n • Dashboards • IA aplicada
       </p>
 
-      <a class="button"
-         href="https://www.linkedin.com/in/SEU-LINK-AQUI"
-         target="_blank"
-         rel="noopener noreferrer">
+      <!-- Botão -->
+      <a
+        class="button"
+        href="https://www.linkedin.com/in/SEU-LINK-AQUI"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Fale comigo
       </a>
 
+      <!-- Rodapé -->
       <div class="footer">
         © 2026 João Victor • Data World
       </div>
+
     </div>
   </div>
 
