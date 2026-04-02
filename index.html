@@ -91,6 +91,16 @@
       font-size: 0.9rem;
       opacity: 0.8;
       margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
     }
 
     @media (max-width: 600px) {
@@ -128,19 +138,9 @@
 
     <div class="footer">
       © 2026 João Victor | Data World Brasil
-      <!-- ícone Lucide -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-           class="lucide lucide-robot" style="vertical-align: middle; margin-left: 6px;">
-        <rect x="2" y="7" width="20" height="12" rx="2" ry="2"></rect>
-        <path d="M6 7V5a4 4 0 0 1 8 0v2"></path>
-        <path d="M8 16h.01"></path>
-        <path d="M16 16h.01"></path>
-        <path d="M12 11v1"></path>
-        <path d="M2 15h20"></path>
-      </svg>
+      <!-- ícone robot Lucide via link SVG -->
+      <img src="https://lucide.dev/icons/robot.svg" alt="Robot Icon">
     </div>
-
   </div>
 </body>
 </html>
